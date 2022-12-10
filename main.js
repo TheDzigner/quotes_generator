@@ -6,6 +6,17 @@ const action_btn =
 
 document.querySelectorAll('.buttons button')
 
+const quote = {
+
+  title: 'quotes generator',
+
+  text : '', 
+
+  url: ''
+
+}
+
+
 async function loadQuotes() {
 
   try {
@@ -16,7 +27,7 @@ async function loadQuotes() {
 
    const data = await results.json()
 
-   shareQuote(data)
+   quote.text = data.content
 
    container.innerHTML = 
 
@@ -54,17 +65,9 @@ window.onload = loadQuotes
 
 action_btn[0].onclick = loadQuotes
 
-function shareQuote(data) {
+function shareQuote() {
 
-  const quote = {
-
-  title: 'quotes generator',
-
-  text : data.content,
-
-  url: ''
-
-}
+  
 
   if (navigator.canShare && navigator.canShare(quote)) {
 
