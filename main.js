@@ -27,7 +27,7 @@ async function loadQuotes() {
 
    const data = await results.json()
 
-   quote.text = data.content
+   quote.text = `${data.content}. / Author - ${data.author}` 
 
    container.innerHTML = 
 
