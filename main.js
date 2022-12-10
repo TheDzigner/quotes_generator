@@ -138,3 +138,16 @@ function shareQuote() {
 
 action_btn[1].onclick = shareQuote
 
+
+
+function googleTranslateElementInit()
+
+{
+
+  
+
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+
+}
+
+
